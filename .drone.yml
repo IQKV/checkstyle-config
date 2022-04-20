@@ -1,0 +1,54 @@
+kind: pipeline
+name: build-and-deploy
+
+type : docker
+steps:
+
+  - name: build
+    image: maven:3-jdk-11
+    commands:
+      - mvn clean package
+    when:
+      branch:
+        include:
+          - feature/*
+          - main
+      event:
+        include:
+          - push
+          - pull_request
+
+  - name: publish-snapshot-package
+    image: maven:3-jdk-11
+    environment :
+      DEPLOYER_USERNAME :
+        from_secret : DEPLOYER_USERNAME
+      DEPLOYER_PASSWORD :
+        from_secret : DEPLOYER_PASSWORD
+    commands:
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+    when:
+      branch:
+        include:
+          - feature/*
+          - main
+      event:
+        include:
+          - push
+          - pull_request
+    depends_on :
+      - build
+
+  - name: publish-release-package
+    image: maven:3-jdk-11
+    environment :
+      DEPLOYER_USERNAME :
+        from_secret : DEPLOYER_USERNAME
+      DEPLOYER_PASSWORD :
+        from_secret : DEPLOYER_PASSWORD
+    commands:
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+    when:
+      event: tag
+    depends_on :
+      - build

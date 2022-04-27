@@ -11,9 +11,9 @@ steps:
 
   - name: build
     image: maven:3-openjdk-17-slim
-    volumes :
-      - name : m2cache
-        path : /root/.m2
+    volumes:
+      - name: m2cache
+        path: /root/.m2
     commands:
       - mvn clean package
     when:

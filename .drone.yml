@@ -15,6 +15,7 @@ steps:
       - name: m2cache
         path: /root/.m2
     commands:
+      - rm -rf /root/.m2/repository/org/ujar/
       - mvn clean package
     when:
       branch:

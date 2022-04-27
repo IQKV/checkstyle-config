@@ -2,10 +2,18 @@ kind: pipeline
 name: build-and-deploy
 
 type : docker
+
+volumes:
+  - name: m2cache
+    host:
+      path: /var/cache/m2cache
 steps:
 
   - name: build
     image: maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     commands:
       - mvn clean package
     when:
@@ -20,6 +28,9 @@ steps:
 
   - name: publish-snapshot-package
     image: maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -41,6 +52,9 @@ steps:
 
   - name: publish-release-package
     image: maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME

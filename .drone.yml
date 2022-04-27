@@ -5,7 +5,7 @@ type : docker
 steps:
 
   - name: build
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     commands:
       - mvn clean package
     when:
@@ -19,7 +19,7 @@ steps:
           - pull_request
 
   - name: publish-snapshot-package
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -40,7 +40,7 @@ steps:
       - build
 
   - name: publish-release-package
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME

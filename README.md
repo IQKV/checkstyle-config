@@ -1,7 +1,7 @@
 uJar Checkstyle Configuration
 ================================
 
-[![Build Status](https://drone.ujar.org/api/badges/ujar-org/code-quality-checkstyle/status.svg?ref=refs/heads/main)](https://drone.ujar.org/ujar-org/code-quality-checkstyle)
+[![Build Status](https://drone.ujar.org/api/badges/ujar-org/ujar-code-quality/status.svg?ref=refs/heads/main)](https://drone.ujar.org/ujar-org/ujar-code-quality)
 
 This project provides a default configuration for checkstyle.
 
@@ -14,7 +14,7 @@ To use it, configure your maven-checkstyle-plugin like so:
      <dependencies>
        <dependency>
          <groupId>org.ujar.codequality</groupId>
-         <artifactId>code-quality-checkstyle</artifactId>
+         <artifactId>ujar-code-quality-checkstyle</artifactId>
          <version>LATEST-VERSION</version>
        </dependency>
        <dependency>

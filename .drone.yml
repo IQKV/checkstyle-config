@@ -1,38 +1,38 @@
-kind: pipeline
-name: build-and-deploy
+kind : pipeline
+name : build-and-deploy
 
 type : docker
 
-trigger:
-  branch:
+trigger :
+  branch :
     - main
     - develop
     - feature/*
-  event:
+  event :
     - push
 
-volumes:
-  - name: m2cache
-    host:
-      path: /volume1/m2cache
-steps:
+volumes :
+  - name : m2cache
+    host :
+      path : /volume1/m2cache
+steps :
 
-  - name: build
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
-    commands:
+  - name : build
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
+    commands :
       - mvn clean package
-    when:
-      branch:
-        include:
+    when :
+      branch :
+        include :
           - feature/*
           - develop
           - main
 
-  - name: publish-snapshot-package
-    image: maven:3-openjdk-17-slim
+  - name : publish-snapshot-package
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
     volumes :
       - name : m2cache
         path : /root/.m2
@@ -41,19 +41,19 @@ steps:
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-    when:
-      branch:
-        include:
+    commands :
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+    when :
+      branch :
+        include :
           - feature/*
           - develop
           - main
     depends_on :
       - build
 
-  - name: publish-release-package
-    image: maven:3-openjdk-17-slim
+  - name : publish-release-package
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
     volumes :
       - name : m2cache
         path : /root/.m2
@@ -62,9 +62,9 @@ steps:
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -X -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-    when:
-      event: tag
+    commands :
+      - mvn deploy -X -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+    when :
+      event : tag
     depends_on :
       - build

@@ -1,7 +1,7 @@
 uJar Checkstyle Configuration
 ================================
 
-[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/ujar-code-quality/status.svg?ref=refs/heads/main)](https://drone.c2a2.com/ujar-org/ujar-code-quality)
+[![Build Status](http://iaolg9igjr3tghootxslfe.webrelay.io/api/badges/ujar-org/ujar-code-quality/status.svg?ref=refs/heads/main)](http://iaolg9igjr3tghootxslfe.webrelay.io/ujar-org/ujar-code-quality)
 
 This project provides a default configuration for checkstyle.
 

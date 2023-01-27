@@ -40,9 +40,4 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
-    <scm>
-        <connection>scm:git:https://github.com/ujar-org/ujar-code-quality.git</connection>
-        <tag>HEAD</tag>
-    </scm>
-
 </project>

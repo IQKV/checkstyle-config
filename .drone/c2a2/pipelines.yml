@@ -1,5 +1,5 @@
 kind : pipeline
-name : build-and-deploy
+name : CI
 
 type : docker
 

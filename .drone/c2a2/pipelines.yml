@@ -9,6 +9,7 @@ trigger :
     - feature/*
   event :
     - push
+    - tag
 
 volumes :
   - name : m2cache

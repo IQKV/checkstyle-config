@@ -5,7 +5,6 @@ type : docker
 
 trigger :
   branch :
-    - main
     - develop
     - feature/*
   event :
@@ -30,7 +29,6 @@ steps :
         include :
           - feature/*
           - develop
-          - main
 
   - name : publish-snapshot-package
     image : docker-registry.c2a2.com/ujar/maven:3-openjdk-17-slim
@@ -50,7 +48,6 @@ steps :
         include :
           - feature/*
           - develop
-          - main
     depends_on :
       - build
 

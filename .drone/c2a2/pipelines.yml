@@ -26,6 +26,9 @@ steps :
     commands :
       - mvn clean package
     when :
+      event :
+        - push
+        - tag
       branch :
         include :
           - feature/*

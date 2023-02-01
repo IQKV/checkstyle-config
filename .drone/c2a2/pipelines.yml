@@ -4,9 +4,6 @@ name : CI
 type : docker
 
 trigger :
-  branch :
-    - develop
-    - feature/*
   event :
     - push
     - tag
@@ -25,14 +22,10 @@ steps :
         path : /root/.m2
     commands :
       - mvn clean package
-    when :
-      event :
+    when:
+      event:
         - push
         - tag
-      branch :
-        include :
-          - feature/*
-          - develop
 
   - name : publish-snapshot-package
     image : docker-registry.c2a2.com/ujar/maven:3-openjdk-17-slim
@@ -48,9 +41,6 @@ steps :
     commands :
       - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -DaltDeploymentRepository=ujar-snapshots-repository::default::https://nexus.c2a2.com/repository/maven-snapshots
     when :
-      event :
-        - push
-        - tag
       branch :
         include :
           - feature/*
@@ -71,9 +61,8 @@ steps :
         from_secret : DEPLOYER_PASSWORD
     commands :
       - mvn deploy -X -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -DaltDeploymentRepository=ujar-releases-repository::default::https://nexus.c2a2.com/repository/maven-releases
-    when :
-      event :
-        - push
-        - tag
+    when:
+      ref:
+        - refs/tags/*
     depends_on :
       - build

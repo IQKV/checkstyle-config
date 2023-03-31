@@ -8,7 +8,7 @@ To use it, configure your maven-checkstyle-plugin like so:
 ```
    <plugin>
      <artifactId>maven-checkstyle-plugin</artifactId>
-     <version>3.1.2</version>
+     <version>3.2.1</version>
      <dependencies>
        <dependency>
          <groupId>org.ujar.codequality</groupId>
@@ -18,7 +18,7 @@ To use it, configure your maven-checkstyle-plugin like so:
        <dependency>
          <groupId>com.puppycrawl.tools</groupId>
          <artifactId>checkstyle</artifactId>
-         <version>9.1</version>
+         <version>10.7.0</version>
        </dependency>
      </dependencies>
      <configuration>
@@ -57,7 +57,7 @@ that projects only need to specify the below in their
 
 # Configuration
 
-## Suppressions
+### Suppressions
 
 The configuration of the checkstyle plugin you get from `ujar_checks.xml` tells it to optionally look for a file
 named `checkstyle-suppressions.xml` as per the
@@ -66,7 +66,20 @@ configure suppressions by providing such a file on your project's classpath or i
 it - note that for multi-module projects, it's probably a good idea to use something
 like [this solution](http://stackoverflow.com/a/19690484/1659929) to share the configuration among each sub-module.
 
-# IDEA support
+### IDEA support
 
 There is a [configuration file for IntelliJ IDEA](src/main/idea/ujar-checkstyle-idea.xml) that you can import into your
 project.
+
+## Versioning
+
+Project uses a three-segment [CalVer](https://calver.org/) scheme, with a short year in the major version slot, short month in the minor version slot, and micro/patch version in the third
+and final slot.
+
+```
+YY.MM.MICRO
+```
+
+1. **YY** - short year - 6, 16, 106
+1. **MM** - short month - 1, 2 ... 11, 12
+1. **MICRO** -  "patch" segment

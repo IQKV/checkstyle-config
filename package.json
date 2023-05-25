@@ -1,5 +1,5 @@
 {
-    "name": "ujar-code-quality",
+    "name": "build-checkstyle-utils",
     "version": "23.0.0",
     "description": "Provide an optional Git commit hooks.",
     "private": true,

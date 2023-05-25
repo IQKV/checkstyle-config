@@ -11,18 +11,18 @@ To use it, configure your maven-checkstyle-plugin like so:
      <version>3.2.1</version>
      <dependencies>
        <dependency>
-         <groupId>org.ujar.codequality</groupId>
-         <artifactId>ujar-code-quality-checkstyle</artifactId>
+         <groupId>org.ujar.build</groupId>
+         <artifactId>checkstyle-utils</artifactId>
          <version>LATEST-VERSION</version>
        </dependency>
        <dependency>
          <groupId>com.puppycrawl.tools</groupId>
          <artifactId>checkstyle</artifactId>
-         <version>10.7.0</version>
+         <version>10.9.3</version>
        </dependency>
      </dependencies>
      <configuration>
-       <configLocation>ujar_checks.xml</configLocation>
+       <configLocation>svc-common-checkstyle.xml</configLocation>
        
        <!-- The following parameters are optional: -->
        <consoleOutput>true</consoleOutput>
@@ -59,7 +59,7 @@ that projects only need to specify the below in their
 
 ### Suppressions
 
-The configuration of the checkstyle plugin you get from `ujar_checks.xml` tells it to optionally look for a file
+The configuration of the checkstyle plugin you get from `svc-common-checkstyle.xml` tells it to optionally look for a file
 named `checkstyle-suppressions.xml` as per the
 [SuppressionFilter docs](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter). This means you can
 configure suppressions by providing such a file on your project's classpath or in the current directory where you build
@@ -68,7 +68,7 @@ like [this solution](http://stackoverflow.com/a/19690484/1659929) to share the c
 
 ### IDEA support
 
-There is a [configuration file for IntelliJ IDEA](src/main/idea/ujar-checkstyle-idea.xml) that you can import into your
+There is a [configuration file for IntelliJ IDEA](src/main/idea/svc-common-checkstyle-idea.xml) that you can import into your
 project.
 
 ## Versioning

@@ -8,7 +8,7 @@ To use it, configure your maven-checkstyle-plugin like so:
 ```
    <plugin>
      <artifactId>maven-checkstyle-plugin</artifactId>
-     <version>3.2.1</version>
+     <version>3.3.0</version>
      <dependencies>
        <dependency>
          <groupId>org.ujar.build</groupId>
@@ -18,7 +18,7 @@ To use it, configure your maven-checkstyle-plugin like so:
        <dependency>
          <groupId>com.puppycrawl.tools</groupId>
          <artifactId>checkstyle</artifactId>
-         <version>10.9.3</version>
+         <version>10.12.4</version>
        </dependency>
      </dependencies>
      <configuration>

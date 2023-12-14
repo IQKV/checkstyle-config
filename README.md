@@ -1,4 +1,4 @@
-uJar Checkstyle Configuration
+Checkstyle Configuration
 ================================
 
 This project provides a default configuration for checkstyle.
@@ -11,8 +11,8 @@ To use it, configure your maven-checkstyle-plugin like so:
      <version>3.3.0</version>
      <dependencies>
        <dependency>
-         <groupId>org.ujar.build</groupId>
-         <artifactId>checkstyle-utils</artifactId>
+         <groupId>org.iqkv.checkstyle</groupId>
+         <artifactId>iqkv-checkstyle-config</artifactId>
          <version>LATEST-VERSION</version>
        </dependency>
        <dependency>
@@ -22,7 +22,7 @@ To use it, configure your maven-checkstyle-plugin like so:
        </dependency>
      </dependencies>
      <configuration>
-       <configLocation>svc-common-checkstyle.xml</configLocation>
+       <configLocation>iqkv-common-checkstyle.xml</configLocation>
        
        <!-- The following parameters are optional: -->
        <consoleOutput>true</consoleOutput>
@@ -59,7 +59,7 @@ that projects only need to specify the below in their
 
 ### Suppressions
 
-The configuration of the checkstyle plugin you get from `svc-common-checkstyle.xml` tells it to optionally look for a file
+The configuration of the checkstyle plugin you get from `iqkv-common-checkstyle.xml` tells it to optionally look for a file
 named `checkstyle-suppressions.xml` as per the
 [SuppressionFilter docs](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter). This means you can
 configure suppressions by providing such a file on your project's classpath or in the current directory where you build

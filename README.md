@@ -1,6 +1,8 @@
 Checkstyle Configuration
 ================================
 
+[![Build Status](https://know-how.run/api/badges/IQKV/iqkv-checkstyle-config/status.svg)](https://know-how.run/IQKV/iqkv-checkstyle-config)
+
 This project provides a default configuration for checkstyle.
 
 To use it, configure your maven-checkstyle-plugin like so:

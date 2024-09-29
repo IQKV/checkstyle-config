@@ -13,7 +13,7 @@ To use it, configure your maven-checkstyle-plugin like so:
      <version>3.3.0</version>
      <dependencies>
        <dependency>
-         <groupId>org.iqkv.checkstyle</groupId>
+         <groupId>com.iqkv.checkstyle</groupId>
          <artifactId>iqkv-checkstyle-config</artifactId>
          <version>LATEST-VERSION</version>
        </dependency>

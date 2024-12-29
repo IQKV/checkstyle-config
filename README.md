@@ -1,5 +1,4 @@
-Checkstyle Configuration
-================================
+# Checkstyle Configuration
 
 [![Build Status](https://know-how.run/api/badges/IQKV/iqkv-checkstyle-config/status.svg)](https://know-how.run/IQKV/iqkv-checkstyle-config)
 
@@ -25,7 +24,7 @@ To use it, configure your maven-checkstyle-plugin like so:
      </dependencies>
      <configuration>
        <configLocation>iqkv-common-checkstyle.xml</configLocation>
-       
+
        <!-- The following parameters are optional: -->
        <consoleOutput>true</consoleOutput>
        <failOnViolation>true</failOnViolation>
@@ -84,4 +83,4 @@ YY.MM.MICRO
 
 1. **YY** - short year - 6, 16, 106
 1. **MM** - short month - 1, 2 ... 11, 12
-1. **MICRO** -  "patch" segment
+1. **MICRO** - "patch" segment

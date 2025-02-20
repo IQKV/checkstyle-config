@@ -1,6 +1,6 @@
 # Checkstyle Configuration
 
-[![Build Status](https://know-how.run/api/badges/IQKV/iqkv-checkstyle-config/status.svg)](https://know-how.run/IQKV/iqkv-checkstyle-config)
+[![Build Status](https://know-how.run/api/badges/IQKV/checkstyle-config/status.svg)](https://know-how.run/IQKV/checkstyle-config)
 
 This project provides a default configuration for checkstyle.
 
@@ -9,21 +9,21 @@ To use it, configure your maven-checkstyle-plugin like so:
 ```
    <plugin>
      <artifactId>maven-checkstyle-plugin</artifactId>
-     <version>3.3.0</version>
+     <version>3.6.0</version>
      <dependencies>
        <dependency>
          <groupId>com.iqkv.checkstyle</groupId>
-         <artifactId>iqkv-checkstyle-config</artifactId>
+         <artifactId>checkstyle-config</artifactId>
          <version>LATEST-VERSION</version>
        </dependency>
        <dependency>
          <groupId>com.puppycrawl.tools</groupId>
          <artifactId>checkstyle</artifactId>
-         <version>10.12.4</version>
+         <version>10.21.2</version>
        </dependency>
      </dependencies>
      <configuration>
-       <configLocation>iqkv-common-checkstyle.xml</configLocation>
+       <configLocation>maven-project-common-checkstyle.xml</configLocation>
 
        <!-- The following parameters are optional: -->
        <consoleOutput>true</consoleOutput>
@@ -60,7 +60,7 @@ that projects only need to specify the below in their
 
 ### Suppressions
 
-The configuration of the checkstyle plugin you get from `iqkv-common-checkstyle.xml` tells it to optionally look for a file
+The configuration of the checkstyle plugin you get from `maven-project-common-checkstyle.xml` tells it to optionally look for a file
 named `checkstyle-suppressions.xml` as per the
 [SuppressionFilter docs](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter). This means you can
 configure suppressions by providing such a file on your project's classpath or in the current directory where you build

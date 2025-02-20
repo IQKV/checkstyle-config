@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.iqkv.checkstyle</groupId>
-    <artifactId>iqkv-checkstyle-config</artifactId>
+    <artifactId>checkstyle-config</artifactId>
     <version>25.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>iqkv-checkstyle-config</name>
+    <name>checkstyle-config</name>
     <description>Checkstyle configuration</description>
     <licenses>
         <license>

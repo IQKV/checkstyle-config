@@ -1,6 +1,6 @@
-# Checkstyle Configuration
+# ✨ Checkstyle Configuration
 
-[![Build Status](https://know-how.run/api/badges/IQKV/checkstyle-config/status.svg)](https://know-how.run/IQKV/checkstyle-config)
+[![Build Status](https://know-how.run/api/badges/expertness/checkstyle-config/status.svg)](https://know-how.run/expertness/checkstyle-config)
 
 This project provides a default configuration for checkstyle.
 
@@ -12,14 +12,14 @@ To use it, configure your maven-checkstyle-plugin like so:
      <version>3.6.0</version>
      <dependencies>
        <dependency>
-         <groupId>com.iqkv.checkstyle</groupId>
+         <groupId>expert.uses.checkstyle</groupId>
          <artifactId>checkstyle-config</artifactId>
          <version>LATEST-VERSION</version>
        </dependency>
        <dependency>
          <groupId>com.puppycrawl.tools</groupId>
          <artifactId>checkstyle</artifactId>
-         <version>10.21.3</version>
+         <version>10.23.1</version>
        </dependency>
      </dependencies>
      <configuration>

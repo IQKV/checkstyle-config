@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.iqkv.checkstyle</groupId>
+    <groupId>expertness</groupId>
     <artifactId>checkstyle-config</artifactId>
     <version>25.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -18,8 +18,8 @@
         </license>
     </licenses>
     <organization>
-        <name>IQKV</name>
-        <url>https://iqkv.com</url>
+        <name>Dev Expertness</name>
+        <url>https://github.com/expertness</url>
     </organization>
     <developers>
         <developer>
@@ -37,7 +37,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven-deploy-plugin.version>3.1.3</maven-deploy-plugin.version>
+        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
     </properties>
 
     <build>

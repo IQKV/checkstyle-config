@@ -1,5 +1,5 @@
 {
-  "name": "@expertness/checkstyle-config",
+  "name": "@iqkv/checkstyle-config",
   "version": "25.0.0",
   "description": "Provide an optional Git commit hooks.",
   "private": true,

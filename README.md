@@ -2,7 +2,7 @@
 
 [![Build Status](https://know-how.run/api/badges/IQKV/checkstyle-config/status.svg)](https://know-how.run/application-configuration/checkstyle-config)
 
-This project provides a default configuration for checkstyle.
+This project provides a default configuration for Checkstyle.
 
 To use it, configure your maven-checkstyle-plugin like so:
 
@@ -71,16 +71,3 @@ like [this solution](http://stackoverflow.com/a/19690484/1659929) to share the c
 
 There is a [configuration file for IntelliJ IDEA](src/main/idea/svc-common-checkstyle-idea.xml) that you can import into your
 project.
-
-> ### Versioning
->
-> Project uses a three-segment [CalVer](https://calver.org/) scheme, with a short year in the major version slot, short month in the minor version slot, and micro/patch version in the third
-> and final slot.
->
-> ```
->  YY.MM.MICRO
-> ```
->
-> 1. **YY** - short year - 6, 16, 106
-> 2. **MM** - short month - 1, 2 ... 11, 12
-> 3. **MICRO** - "patch" segment

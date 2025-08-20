@@ -6,13 +6,13 @@ This project provides a default configuration for Checkstyle.
 
 To use it, configure your maven-checkstyle-plugin like so:
 
-```
+```xml
    <plugin>
      <artifactId>maven-checkstyle-plugin</artifactId>
      <version>3.6.0</version>
      <dependencies>
        <dependency>
-         <groupId>com.iqkv.checkstyle</groupId>
+         <groupId>com.iqkv</groupId>
          <artifactId>checkstyle-config</artifactId>
          <version>LATEST-VERSION</version>
        </dependency>
@@ -50,7 +50,7 @@ Internally, we have the above configuration in the `<pluginManagement/>` section
 that projects only need to specify the below in their
 `<build><plugins>` section:
 
-```
+```xml
    <plugin>
       <artifactId>maven-checkstyle-plugin</artifactId>
    </plugin>

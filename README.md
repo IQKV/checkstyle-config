@@ -2,72 +2,76 @@
 
 [![Build Status](https://know-how.run/api/badges/dimdnk/checkstyle-config/status.svg)](https://know-how.run/dimdnk/checkstyle-config)
 
-This project provides a default configuration for Checkstyle.
+A comprehensive Checkstyle configuration package that provides consistent Java code quality standards across your projects.
 
-To use it, configure your maven-checkstyle-plugin like so:
+## 🚀 Quick Start
 
+Add the following plugin configuration to your Maven project's `pom.xml`:
 ```xml
-   <plugin>
-     <artifactId>maven-checkstyle-plugin</artifactId>
-     <version>3.6.0</version>
-     <dependencies>
-       <dependency>
-         <groupId>com.iqkv</groupId>
-         <artifactId>checkstyle-config</artifactId>
-         <version>LATEST-VERSION</version>
-       </dependency>
-       <dependency>
-         <groupId>com.puppycrawl.tools</groupId>
-         <artifactId>checkstyle</artifactId>
-         <version>11.0.0</version>
-       </dependency>
-     </dependencies>
-     <configuration>
-       <configLocation>maven-project-common-checkstyle.xml</configLocation>
-
-       <!-- The following parameters are optional: -->
-       <consoleOutput>true</consoleOutput>
-       <failOnViolation>true</failOnViolation>
-       <logViolationsToConsole>true</logViolationsToConsole>
-       <violationSeverity>error</violationSeverity>
-     </configuration>
-     <executions>
-       <execution>
-         <id>validate</id>
-         <phase>validate</phase>
-         <goals>
-           <goal>check</goal>
-         </goals>
-       </execution>
-     </executions>
-   </plugin>
+<plugin>
+  <artifactId>maven-checkstyle-plugin</artifactId>
+  <version>3.6.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.iqkv</groupId>
+      <artifactId>checkstyle-config</artifactId>
+      <version>25.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.puppycrawl.tools</groupId>
+      <artifactId>checkstyle</artifactId>
+      <version>11.0.0</version>
+    </dependency>
+  </dependencies>
+  <configuration>
+    <configLocation>maven-project-common-checkstyle.xml</configLocation>
+    <consoleOutput>true</consoleOutput>
+    <failOnViolation>true</failOnViolation>
+    <logViolationsToConsole>true</logViolationsToConsole>
+    <violationSeverity>error</violationSeverity>
+  </configuration>
+  <executions>
+    <execution>
+      <id>validate</id>
+      <phase>validate</phase>
+      <goals>
+        <goal>check</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
 ```
+For detailed configuration options, see the [maven-checkstyle-plugin documentation](https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html).
 
-See the [maven-checkstyle-plugin docs](https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html)
-for more information about what the configuration parameters mean.
+## 🎯 Enterprise Setup
 
-Internally, we have the above configuration in the `<pluginManagement/>` section of a company-wide parent pom, meaning
-that projects only need to specify the below in their
-`<build><plugins>` section:
-
+For organizations using a parent POM approach, add the plugin configuration to your `<pluginManagement/>` section in your parent POM. This allows individual projects to simply reference the plugin without duplicating configuration:
 ```xml
-   <plugin>
-      <artifactId>maven-checkstyle-plugin</artifactId>
-   </plugin>
+<plugin>
+  <artifactId>maven-checkstyle-plugin</artifactId>
+</plugin>
 ```
+## ⚙️ Configuration
 
-# Configuration
+### Custom Suppressions
 
-### Suppressions
+You can customize the rules by providing a `checkstyle-suppressions.xml` file in your project's classpath or current directory. The configuration automatically looks for this file using the [SuppressionFilter](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter).
 
-The configuration of the checkstyle plugin you get from `maven-project-common-checkstyle.xml` tells it to optionally look for a file
-named `checkstyle-suppressions.xml` as per the
-[SuppressionFilter docs](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter). This means you can
-configure suppressions by providing such a file on your project's classpath or in the current directory where you build
-it - note that for multi-module projects, it's probably a good idea to use something
-like [this solution](http://stackoverflow.com/a/19690484/1659929) to share the configuration among each sub-module.
+For multi-module projects, consider using a [shared suppressions configuration](http://stackoverflow.com/a/19690484/1659929) to maintain consistency across modules.
 
-### IDEA support
+### IDE Integration
 
-There is a [configuration file for IntelliJ IDEA](src/main/idea/svc-common-checkstyle-idea.xml) that you can import into your
-project.
+#### IntelliJ IDEA
+Import the provided configuration file at `src/main/idea/IDEA-Checkstyle-Defaults.xml` into your IntelliJ IDEA project to sync your IDE with the same rules used in the build process.
+
+## 📝 Features
+
+- ✅ Comprehensive Java code style rules
+- ✅ Maven plugin integration
+- ✅ Customizable suppressions
+- ✅ IDE configuration support
+- ✅ Enterprise-ready for parent POM usage
+
+## 📄 License
+
+This project is licensed under the Apache Software License, Version 2.0 - see the [LICENSE](LICENSE) file for details.

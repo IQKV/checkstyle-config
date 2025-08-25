@@ -7,6 +7,7 @@ A comprehensive Checkstyle configuration package that provides consistent Java c
 ## 🚀 Quick Start
 
 Add the following plugin configuration to your Maven project's `pom.xml`:
+
 ```xml
 <plugin>
   <artifactId>maven-checkstyle-plugin</artifactId>
@@ -41,16 +42,19 @@ Add the following plugin configuration to your Maven project's `pom.xml`:
   </executions>
 </plugin>
 ```
+
 For detailed configuration options, see the [maven-checkstyle-plugin documentation](https://maven.apache.org/plugins/maven-checkstyle-plugin/check-mojo.html).
 
 ## 🎯 Enterprise Setup
 
 For organizations using a parent POM approach, add the plugin configuration to your `<pluginManagement/>` section in your parent POM. This allows individual projects to simply reference the plugin without duplicating configuration:
+
 ```xml
 <plugin>
   <artifactId>maven-checkstyle-plugin</artifactId>
 </plugin>
 ```
+
 ## ⚙️ Configuration
 
 ### Custom Suppressions
@@ -62,6 +66,7 @@ For multi-module projects, consider using a [shared suppressions configuration](
 ### IDE Integration
 
 #### IntelliJ IDEA
+
 Import the provided configuration file at `src/main/idea/IDEA-Checkstyle-Defaults.xml` into your IntelliJ IDEA project to sync your IDE with the same rules used in the build process.
 
 ## 📝 Features

@@ -41,6 +41,7 @@ src/main/
 ### Rule change impact
 
 A rule addition or tightening is a **breaking change** for all consuming services. Before tightening any rule:
+
 1. Check that the change compiles cleanly on at least one service (`./mvnw validate -Dcheckstyle.skip=false`)
 2. List affected services in the PR description
 3. Coordinate the version bump in `boot-parent-pom` (`iqkv.checkstyle.version`)
@@ -78,6 +79,7 @@ Format: `type(scope): subject`
   - ❌ `fix(suppressions): add suppression for generated files`
 
 Examples:
+
 - `feat(checkstyle): add MissingJavadocMethod rule for public methods`
 - `fix(suppressions): Lombok-generated constructors trigger FinalClass violation`
 - `improvement(line-length): raise limit from 190 to 220 for generated code patterns`

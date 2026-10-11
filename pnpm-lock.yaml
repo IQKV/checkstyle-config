@@ -1640,8 +1640,8 @@ packages:
     resolution: {integrity: sha512-UjOaSel/iddGZJ5xP/Eixh6dY1XghiBw4XK13rCCIJcJfyhhoul/7KhLLUGtebEj6GDYM6Vnx/mVsjx2L/mFIA==}
     engines: {node: '>=12.0.0'}
 
-  ip-address@10.2.0:
-    resolution: {integrity: sha512-/+S6j4E9AHvW9SWMSEY9Xfy66O5PWvVEJ08O0y5JGyEKQpojb0K0GKpz/v5HJ/G0vi3D2sjGK78119oXZeE0qA==}
+  ip-address@10.7.3:
+    resolution: {integrity: sha512-A1kdq/tSb5QjvKvAMgIoEvDBIgL7qaqVP/jkvSwYYRZ9iEzvPpopxp2wQfu3SuZRHtpHNxMn8Fs0bS+gf5Xmwg==}
     engines: {node: '>= 12'}
 
   is-arrayish@0.2.1:
@@ -4087,7 +4087,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  ip-address@10.2.0: {}
+  ip-address@10.7.3: {}
 
   is-arrayish@0.2.1: {}
 
@@ -4732,7 +4732,7 @@ snapshots:
 
   socks@2.8.9:
     dependencies:
-      ip-address: 10.2.0
+      ip-address: 10.7.3
       smart-buffer: 4.2.0
 
   sort-object-keys@2.1.0: {}

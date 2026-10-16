@@ -85,6 +85,34 @@ Examples:
 - `improvement(line-length): raise limit from 190 to 220 for generated code patterns`
 - `chore(deps): update checkstyle to 14.3.0`
 
+## Evaluation
+
+How we judge whether an agent task in this repository is actually done. Evaluation is evidence-based — a claim without the command and its observed result is not a pass.
+
+> This section starts minimal and grows with the repository. Add a gate only when a change type repeatedly slips through without it.
+
+### Definition of done
+
+A task is evaluated as done only when all of the following hold:
+
+- Every gate required by the change type below has run and passed.
+- The final report names the exact command(s) run and the observed result (pass/fail) — per AI Agent Guidelines.
+- No required gate was skipped silently. A gate that could not run is reported as a gap, never as a pass.
+
+### Required gates by change type
+
+| Change type | Required gates |
+| --- | --- |
+| Any change | `./mvnw verify` (packages the config jar) |
+| Rule added or tightened | `./mvnw validate -Dcheckstyle.skip=false` against at least one service, and the affected services listed (per Design Rules) |
+| Suppression added | `./mvnw verify` — a suppression only relaxes enforcement |
+| Rule renamed, removed or severity changed | Confirm with the user first: this is a breaking change for every consuming service |
+| `AGENTS.md` or README only | No build gate — state that none applies |
+
+### Ordering
+
+Run the narrowest relevant gate first, then the full set for the change type. On the first failure, stop and report it — do not continue on an unproven base (see Execution Discipline).
+
 ## Development Commands
 
 ```bash

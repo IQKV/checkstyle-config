@@ -101,13 +101,13 @@ A task is evaluated as done only when all of the following hold:
 
 ### Required gates by change type
 
-| Change type | Required gates |
-| --- | --- |
-| Any change | `./mvnw verify` (packages the config jar) |
-| Rule added or tightened | `./mvnw validate -Dcheckstyle.skip=false` against at least one service, and the affected services listed (per Design Rules) |
-| Suppression added | `./mvnw verify` — a suppression only relaxes enforcement |
-| Rule renamed, removed or severity changed | Confirm with the user first: this is a breaking change for every consuming service |
-| `AGENTS.md` or README only | No build gate — state that none applies |
+| Change type                               | Required gates                                                                                                              |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Any change                                | `./mvnw verify` (packages the config jar)                                                                                   |
+| Rule added or tightened                   | `./mvnw validate -Dcheckstyle.skip=false` against at least one service, and the affected services listed (per Design Rules) |
+| Suppression added                         | `./mvnw verify` — a suppression only relaxes enforcement                                                                    |
+| Rule renamed, removed or severity changed | Confirm with the user first: this is a breaking change for every consuming service                                          |
+| `AGENTS.md` or README only                | No build gate — state that none applies                                                                                     |
 
 ### Ordering
 
